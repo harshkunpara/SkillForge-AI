@@ -2,8 +2,9 @@ import { createClient } from "@supabase/supabase-js";
 import { projectId, publicAnonKey } from "../../utils/supabase/info";
 import type { Database } from "./database.types";
 
-const supabaseUrl = "https://rwfzmjtqyglzrgxzfyei.supabase.co";
-    const supabaseAnonKey = "sb_publishable_FkFnODPmW9dINYw_m927GQ_1mbWCsvX";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || `https://${projectId}.supabase.co`;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || publicAnonKey;
+
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
