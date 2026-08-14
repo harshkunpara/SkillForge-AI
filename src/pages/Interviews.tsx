@@ -324,7 +324,7 @@ export default function Interviews() {
           <div className="card p-6">
             <h2 className="font-bold text-slate-900 mb-5">Interview Performance History</h2>
             <ResponsiveContainer width="100%" height={220}>
-              <LineChart data={HISTORY_DATA}>
+              <LineChart data={historyData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="date" tick={{ fontSize: 12, fill: "#64748b" }} />
                 <YAxis domain={[50, 100]} tick={{ fontSize: 12, fill: "#64748b" }} />
